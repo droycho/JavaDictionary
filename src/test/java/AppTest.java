@@ -71,6 +71,18 @@ public class AppTest extends FluentTest{
      assertThat(pageSource()).contains("Add a definition to Soft");
    }
 
-
-
+   @Test
+   public void definitionIsAddedAndDisplayed() {
+     goTo("http://localhost:4567/entries/new");
+     fill("#word").with("Clear");
+     submit(".btn");
+     click("a", withText("View Words"));
+     click("a", withText("Clear"));
+     click("a", withText("Add a new definition"));
+     fill("#definition").with("adj. 1. easy to perceive, understand, or interpret.");
+     submit(".btn");
+     click("a", withText("View Words"));
+     click("a", withText("Clear"));
+     assertThat(pageSource()).contains("adj. 1. easy to perceive, understand, or interpret.");
+   }
  }

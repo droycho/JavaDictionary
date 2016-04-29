@@ -52,6 +52,20 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    post("/definitions", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+
+      Entry entry = Entry.find(Integer.parseInt(request.queryParams("entryId")));
+
+      String meaning = request.queryParams("definition");
+      Definition newDefinition = new Definition(meaning);
+
+      entry.addDefinition(newDefinition);
+
+      model.put("entry", entry);
+      model.put("template", "templates/entry-definitions-success.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
 
   }
 }
