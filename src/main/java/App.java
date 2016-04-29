@@ -15,6 +15,20 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/entries/new", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/entry-form.vtl");
+      return new ModelAndView(model,layout);
+    }, new VelocityTemplateEngine());
+
+    post("/entries", (request,response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      String word = request.queryParams("word");
+      Entry newEntry = new Entry(word);
+      model.put("template", "templates/entry-success.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
 
   }
 }

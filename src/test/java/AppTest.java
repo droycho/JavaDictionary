@@ -14,24 +14,36 @@ public class AppTest extends FluentTest{
   public WebDriver webDriver = new HtmlUnitDriver();
 
   @Override
- public WebDriver getDefaultDriver() {
+   public WebDriver getDefaultDriver() {
    return webDriver;
- }
+   }
 
- @ClassRule
- public static ServerRule server = new ServerRule();
- //Use this code to clear each object things after tests. Change names to names of each object.
- // @After
- //   public void tearDown() {
- //     MainClass.clear();
- //     SubClass1.clear();
- //     SubClass2.clear();
- //     SubClass3.clear();
- //   }
+   @ClassRule
+   public static ServerRule server = new ServerRule();
+   //Use this code to clear each object things after tests. Change names to names of each object.
+   // @After
+   //   public void tearDown() {
+   //     MainClass.clear();
+   //     SubClass1.clear();
+   //     SubClass2.clear();
+   //     SubClass3.clear();
+   //   }
 
- @Test
- public void rootTest() {
-   goTo("http://localhost:4567/");
-   assertThat(pageSource()).contains("Dictionary");
- }
+   @Test
+   public void rootTest() {
+     goTo("http://localhost:4567/");
+     assertThat(pageSource()).contains("Dictionary");
+   }
+
+   @Test
+   public void entryIsCreatedTest() {
+     goTo("http://localhost:4567/");
+     click("a", withText("Add a New Word"));
+     fill("#word").with("Hard");
+     submit(".btn");
+     assertThat(pageSource()).contains("Your word has been saved.");
+   }
+
+
+
  }
