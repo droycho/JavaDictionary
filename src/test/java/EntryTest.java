@@ -40,5 +40,12 @@ public class EntryTest {
     assertEquals(1, testEntry.getId());
   }
 
+  @Test
+  public void find_returnsEntryWithSameId_secondEntry() {
+    Entry firstEntry = new Entry("Hard");
+    Entry secondEntry = new Entry("Soft");
+    assertEquals(Entry.find(secondEntry.getId()), secondEntry);
+  }
+
   // run tests here.
 }

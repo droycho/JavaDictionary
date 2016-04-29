@@ -27,5 +27,13 @@ public class Entry{
     return mId;
   }
 
+  public static Entry find(int id) {
+    try {
+      return instances.get(id -1);
+    } catch (IndexOutOfBoundsException e) {
+      return null;
+    }
+  }
+
 
 }
