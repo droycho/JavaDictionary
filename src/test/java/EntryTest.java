@@ -47,5 +47,10 @@ public class EntryTest {
     assertEquals(Entry.find(secondEntry.getId()), secondEntry);
   }
 
+  @Test
+  public void find_returnsNullWhenNoEntryFound_null() {
+    assertTrue(Entry.find(999) == null);
+  }
+
   // run tests here.
 }
