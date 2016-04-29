@@ -2,12 +2,18 @@ import java.util.ArrayList;
 
 public class Definition {
   private String mMeaning;
+  private static ArrayList<Definition> instances = new ArrayList<Definition>();
 
   public Definition(String meaning) {
     mMeaning = meaning;
+    instances.add(this);
   }
 
   public String getMeaning() {
     return mMeaning;
+  }
+
+  public static ArrayList<Definition> all() {
+    return instances;
   }
 }

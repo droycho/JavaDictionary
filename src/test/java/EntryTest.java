@@ -61,7 +61,7 @@ public class EntryTest {
   @Test
   public void addDefinition_addsDefinitionToList_true() {
     Entry testEntry = new Entry("Hard");
-    Definition testDefinition = new Definition("adj. 1. Solid, firm, and resistant to pressure; not easily broken, bent, or pierced.");
+    Definition testDefinition = new Definition("adj. 1. solid, firm, and resistant to pressure; not easily broken, bent, or pierced.");
     testEntry.addDefinition(testDefinition);
     assertTrue(testEntry.getDefinitions().contains(testDefinition));
   }

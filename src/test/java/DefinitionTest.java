@@ -11,8 +11,16 @@ public class DefinitionTest {
 
   @Test
   public void Definition_instantiatesWithMeaning_String() {
-    Definition myDefinition = new Definition("adj. 1. Solid, firm, and resistant to pressure; not easily broken, bent, or pierced.");
-    assertEquals("adj. 1. Solid, firm, and resistant to pressure; not easily broken, bent, or pierced.", myDefinition.getMeaning());
+    Definition myDefinition = new Definition("adj. 1. solid, firm, and resistant to pressure; not easily broken, bent, or pierced.");
+    assertEquals("adj. 1. solid, firm, and resistant to pressure; not easily broken, bent, or pierced.", myDefinition.getMeaning());
+  }
+
+  @Test
+  public void all_returnsAllInstancesOFDefinition_true() {
+    Definition firstDefinition = new Definition("adj. 1. solid, firm, and resistant to pressure; not easily broken, bent, or pierced.");
+    Definition secondDefinition = new Definition("adj. 2. requiring a great deal of endurance or effort.");
+    assertTrue(Definition.all().contains(firstDefinition));
+    assertTrue(Definition.all().contains(secondDefinition));
   }
 
 
