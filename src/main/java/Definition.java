@@ -26,4 +26,12 @@ public class Definition {
   public int getId() {
     return mId;
   }
+
+  public static Definition find(int id) {
+    try{
+      return instances.get(id - 1);
+    } catch (IndexOutOfBoundsException e) {
+      return null;
+    }
+  }
 }

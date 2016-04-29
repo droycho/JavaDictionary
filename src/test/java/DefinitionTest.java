@@ -37,6 +37,18 @@ public class DefinitionTest {
     assertEquals(1, myDefinition.getId());
   }
 
+  @Test
+  public void find_returnsDefinitionWithSameId_secondDefinition() {
+    Definition firstDefinition = new Definition("adj. 1. solid, firm, and resistant to pressure; not easily broken, bent, or pierced.");
+    Definition secondDefinition = new Definition("adj. 2. requiring a great deal of endurance or effort.");
+    assertEquals(Definition.find(secondDefinition.getId()), secondDefinition);
+  }
+
+  // @Test
+  // public void find_returnsNullWhenNoDefinitionFound_null() {
+  //   assertTrue(Definition.find(999) == null);
+  // }
+
 
 
 }
