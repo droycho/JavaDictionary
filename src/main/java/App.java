@@ -29,6 +29,13 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
+    get("/entries", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      model.put("entries", Entry.all());
+      model.put("template", "templates/entries.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
+
 
   }
 }

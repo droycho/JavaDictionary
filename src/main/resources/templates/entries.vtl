@@ -1,0 +1,7 @@
+<h1>All words</h1>
+<ul>
+  #foreach ($entry in $entries)
+  <li><a href="/entries/$entry.getId()">$entry.getWord()</a></li>
+  #end
+</ul>
+<a href="/categories/new">Add New Word</a>
