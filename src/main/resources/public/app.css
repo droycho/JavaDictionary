@@ -4,12 +4,17 @@ body {
   color: white;
   font-family: 'Schoolbell', cursive;
   text-align: center;
+  font-size: 20px;
 }
+a {
+  color: white;
+}
+
+h1 {
+  font-size: 80px;
+}
+
 
 #word {
   color: black;
-}
-
-a {
-  color: white;
 }
