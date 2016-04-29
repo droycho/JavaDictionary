@@ -60,6 +60,17 @@ public class AppTest extends FluentTest{
      assertThat(pageSource()).contains("Hard");
    }
 
+   @Test
+   public void entryDefinitionsFormIsDisplayed() {
+     goTo("http://localhost:4567/entries/new");
+     fill("#word").with("Soft");
+     submit(".btn");
+     click("a", withText("View Words"));
+     click("a", withText("Soft"));
+     click("a", withText("Add a new definition"));
+     assertThat(pageSource()).contains("Add a definition to Soft");
+   }
+
 
 
  }
