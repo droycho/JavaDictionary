@@ -65,6 +65,4 @@ public class EntryTest {
     testEntry.addDefinition(testDefinition);
     assertTrue(testEntry.getDefinitions().contains(testDefinition));
   }
-
-  // run tests here.
 }
