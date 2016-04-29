@@ -20,14 +20,11 @@ public class AppTest extends FluentTest{
 
    @ClassRule
    public static ServerRule server = new ServerRule();
-   //Use this code to clear each object things after tests. Change names to names of each object.
-   // @After
-   //   public void tearDown() {
-   //     MainClass.clear();
-   //     SubClass1.clear();
-   //     SubClass2.clear();
-   //     SubClass3.clear();
-   //   }
+   @After
+     public void tearDown() {
+       Entry.clear();
+       Definition.clear();
+     }
 
    @Test
    public void rootTest() {
@@ -50,6 +47,16 @@ public class AppTest extends FluentTest{
      fill("#word").with("Hard");
      submit(".btn");
      click("a", withText("View Words"));
+     assertThat(pageSource()).contains("Hard");
+   }
+
+   @Test
+   public void entryShowPageDisplaysWord() {
+     goTo("http://localhost:4567/entries/new");
+     fill("#word").with("Hard");
+     submit(".btn");
+     click("a", withText("View Words"));
+     click("a", withText("Hard"));
      assertThat(pageSource()).contains("Hard");
    }
 
