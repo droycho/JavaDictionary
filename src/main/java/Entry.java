@@ -3,11 +3,12 @@ import java.util.ArrayList;
 public class Entry{
   private String mWord;
   private static ArrayList<Entry> instances = new ArrayList<Entry>();
-  // private int mId;
+  private int mId;
 
   public Entry(String word) {
     mWord = word;
     instances.add(this);
+    mId = instances.size();
   }
 
   public String getWord() {
@@ -20,6 +21,10 @@ public class Entry{
 
   public static void clear() {
     instances.clear();
+  }
+
+  public int getId() {
+    return mId;
   }
 
 

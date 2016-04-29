@@ -34,5 +34,11 @@ public class EntryTest {
     assertEquals(Entry.all().size(), 0);
   }
 
+  @Test
+  public void getId_entriesInstantiateWithAnId_1() {
+    Entry testEntry = new Entry("Hard");
+    assertEquals(1, testEntry.getId());
+  }
+
   // run tests here.
 }
