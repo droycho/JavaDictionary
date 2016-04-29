@@ -23,6 +23,20 @@ public class DefinitionTest {
     assertTrue(Definition.all().contains(secondDefinition));
   }
 
+  @Test
+  public void clear_emptiesAllDefinitionsFromArrayList_0() {
+    Definition myDefinition = new Definition("adj. 1. solid, firm, and resistant to pressure; not easily broken, bent, or pierced.");
+    Definition.clear();
+    assertEquals(Definition.all().size(), 0);
+  }
+
+  // @Test
+  // public void getId_definitionsInstatiatesWithAnId_1() {
+  //   Defintion.clear();
+  //   Definition myDefinition = new Definition("adj. 1. solid, firm, and resistant to pressure; not easily broken, bent, or pierced.");
+  //   assertEquals(2, myDefinition.getId());
+  // }
+
 
 
 }
