@@ -18,5 +18,9 @@ public class Entry{
     return instances;
   }
 
+  public static void clear() {
+    instances.clear();
+  }
+
 
 }

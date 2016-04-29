@@ -27,5 +27,12 @@ public class EntryTest {
     assertTrue(Entry.all().contains(secondEntry));
   }
 
+  @Test
+  public void clear_emptiesAllEntriesFromList_0() {
+    Entry testEntry = new Entry("Hard");
+    Entry.clear();
+    assertEquals(Entry.all().size(), 0);
+  }
+
   // run tests here.
 }
