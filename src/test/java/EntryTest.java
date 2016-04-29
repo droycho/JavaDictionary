@@ -19,5 +19,13 @@ public class EntryTest {
     assertEquals("Hard", testEntry.getWord());
   }
 
+  @Test
+  public void all_returnAllInstancesOfEntry_true() {
+    Entry firstEntry = new Entry("Hard");
+    Entry secondEntry = new Entry("Soft");
+    assertTrue(Entry.all().contains(firstEntry));
+    assertTrue(Entry.all().contains(secondEntry));
+  }
+
   // run tests here.
 }
