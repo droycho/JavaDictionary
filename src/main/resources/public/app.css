@@ -14,6 +14,13 @@ h1 {
   font-size: 80px;
 }
 
+ul {
+  list-style-position: inside;
+}
+
+ol {
+  list-style-position: inside;
+}
 
 #word {
   color: black;
