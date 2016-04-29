@@ -2,10 +2,10 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 public class EntryTest {
-  // @After
-  // public void tearDown() {
-  //   Entry.clear();
-  // }
+  @After
+  public void tearDown() {
+    Entry.clear();
+  }
 
   @Test
   public void entry_instantiatesCorrectly_true() {
@@ -50,6 +50,12 @@ public class EntryTest {
   @Test
   public void find_returnsNullWhenNoEntryFound_null() {
     assertTrue(Entry.find(999) == null);
+  }
+
+  @Test
+  public void getDefinitions_initiallyReturnsEmptyList_ArrayList() {
+    Entry testEntry = new Entry("Hard");
+    assertEquals(0, testEntry.getDefinitions().size());
   }
 
   // run tests here.
