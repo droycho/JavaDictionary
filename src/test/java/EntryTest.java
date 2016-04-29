@@ -13,5 +13,11 @@ public class EntryTest {
     assertEquals(true, testEntry instanceof Entry);
   }
 
+  @Test
+  public void getWord_entryInstantiatesWithWord_Hard(){
+    Entry testEntry = new Entry("Hard");
+    assertEquals("Hard", testEntry.getWord());
+  }
+
   // run tests here.
 }

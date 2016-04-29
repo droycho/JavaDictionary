@@ -9,9 +9,9 @@ public class Entry{
     mWord = word;
   }
 
-  // public String getWord() {
-  //   return mWord;
-  // }
+  public String getWord() {
+    return mWord;
+  }
 
 
 }
