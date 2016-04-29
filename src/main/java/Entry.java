@@ -41,5 +41,9 @@ public class Entry{
     return mDefinitions;
   }
 
+  public void addDefinition(Definition definition) {
+    mDefinitions.add(definition);
+  }
+
 
 }
